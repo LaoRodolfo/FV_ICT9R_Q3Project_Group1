@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Account - Taxi System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+    url('https://images.unsplash.com/photo-1493238792000-8113da705763?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background: rgba(0,0,0,0.85);
+    padding: 18px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e0ff;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    flex: 1;
+}
+
+.form-container {
+    width: 850px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+.instructions {
+    background: rgba(0, 224, 255, 0.1);
+    border-left: 4px solid #00e0ff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+}
+
+.profile-section {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #00e0ff;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    background: #222;
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn input {
+    display: none;
+}
+
+.upload-btn label {
+    background: #00e0ff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.upload-btn label:hover {
+    background: white;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.form-group input::placeholder {
+    color: #ccc;
+}
+
+.terms {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.terms input {
+    margin-right: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: none;
+    background: #00e0ff;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+}
+
+footer {
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #ccc;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 100%;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Fare Matrix</a>
+    <a href="#">Schedule</a>
+    <a href="#">Help</a>
+</nav>
+
+<div class="form-wrapper">
+<div class="form-container">
+
+<div class="instructions">
+    <strong>Instructions:</strong><br>
+    Please fill out all required fields accurately. Upload a clear profile photo.
+    Make sure your password is secure and easy to remember.
+    Review your information before clicking <b>Create Account</b>.
+</div>
+
+<h2>Create Account</h2>
+
+<form>
+<div class="form-grid">
+
+<div class="profile-section">
+    <div class="profile-pic">
+        <img id="preview" src="https://via.placeholder.com/180" alt="Profile Preview">
+    </div>
+
+    <div class="upload-btn">
+        <input type="file" id="photo" accept="image/*">
+        <label for="photo">Upload Photo</label>
+    </div>
+</div>
+
+<div>
+
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" placeholder="Enter first name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" placeholder="Enter last name" required>
+    </div>
+
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="09XXXXXXXXX" required>
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="Enter email" required>
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="Enter password" required>
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm password" required>
+    </div>
+
+    <div class="terms">
+        <input type="checkbox" required>
+        I accept the Terms and Conditions
+    </div>
+
+    <button type="submit" class="btn">Create Account</button>
+
+</div>
+
+</div>
+</form>
+
+</div>
+</div>
+
+<footer>
+    Rodolfo C. Lao III | 9-Ruby
+</footer>
+
+<script>
+document.getElementById("photo").addEventListener("change", function(event) {
+    const reader = new FileReader();
+    reader.onload = function(){
+        document.getElementById("preview").src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+});
+</script>
+
+</body>
+</html>
